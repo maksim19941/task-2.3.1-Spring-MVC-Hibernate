@@ -12,12 +12,15 @@ import web.servise.CarServiceImp;
 
 @Controller
 public class CarController {
-    @Autowired
-    CarServiceImp carService;
-    @GetMapping(value = "/cars")
-    public String carView(ModelMap modelMap, @RequestParam(defaultValue = "5") int count) {
+    private final CarServiceImp carService;
 
-        modelMap.addAttribute("cars", carService.getUser(count));
+    public CarController(CarServiceImp carService) {
+        this.carService = carService;
+    }
+
+    @GetMapping(value = "/cars")
+    public String carView(ModelMap model, @RequestParam(defaultValue = "5") int count) {
+        model.addAttribute("cars", carService.getUserlist(count));
         return "car";
     }
 

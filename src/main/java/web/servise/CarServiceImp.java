@@ -1,13 +1,14 @@
 package web.servise;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("carServiceImp")
-public class CarServiceImp {
+@Service("carServiceImp")
+public class CarServiceImp implements CarService{
 
     private List<Car> cars = new ArrayList<>();
 
@@ -29,7 +30,7 @@ public class CarServiceImp {
     }
 
 
-    public List<Car> getUser(int count) {
+    public List<Car> getUserlist(int count) {
         if (count >= 5){
             return cars;
         } else {
