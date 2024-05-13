@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service("carServiceImp")
-public class CarServiceImp implements CarService{
+public class CarServiceImp implements CarService {
 
     private List<Car> cars = new ArrayList<>();
 
@@ -20,7 +20,6 @@ public class CarServiceImp implements CarService{
         cars.add(new Car("Ignat", "priora", "white"));
     }
 
-
     public List<Car> getCars() {
         return cars;
     }
@@ -29,8 +28,7 @@ public class CarServiceImp implements CarService{
         cars.add(car);
     }
 
-
-    public List<Car> getUserlist(int count) {
+    public List<Car> getCarslist(int count) {
         if (count >= 5){
             return cars;
         } else {
