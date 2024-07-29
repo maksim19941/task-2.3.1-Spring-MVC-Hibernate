@@ -1,4 +1,5 @@
 package web.model;
+
 import java.util.Objects;
 
 public class Car {
@@ -6,7 +7,9 @@ public class Car {
     private String model;
     private String color;
 
-    public Car() {}
+    public Car() {
+    }
+
     public Car(String driver, String model, String color) {
         this.driver = driver;
         this.model = model;

@@ -1,6 +1,5 @@
 package web.servise;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import web.model.Car;
 
@@ -29,7 +28,7 @@ public class CarServiceImp implements CarService {
     }
 
     public List<Car> getCarslist(int count) {
-        if (count >= 5){
+        if (count >= 5) {
             return cars;
         } else {
             return cars.subList(0, count);
